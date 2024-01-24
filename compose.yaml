@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+  c-lang:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        progress: plain
+    user: root
+    volumes:
+      - type: bind
+        source: ./
+        target: /main
+    working_dir: /main
+    tty: true
+    stdin_open: true
